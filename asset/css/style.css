@@ -88,6 +88,7 @@ section {
 .sidebar-card .card-img {
   margin-bottom: 15px;
   border: 0.5px solid #d7d7d7;
+  border-radius: 20px;
 }
 .card-img:hover {
   cursor: pointer;
@@ -101,9 +102,8 @@ section {
   position: relative;
 }
 .background-card {
-  width: 100%;
+  width: 707.6px;
   height: auto;
-  border: 0.4px solid #d7d7d7;
   border-radius: 20px;
 }
 .card-title {
@@ -174,10 +174,10 @@ section {
   width: 200px;
   font-size: 16px;
   color: #333333;
+  margin-top: 10px;
 }
 .form-group {
   display: flex;
-  align-items: center;
   margin-bottom: 22px;
 }
 .select-menu {
@@ -221,7 +221,9 @@ section {
   margin-top: 15px;
   overflow-y: auto;
   height: 36vh;
+  z-index: 5;
 }
+
 .select-menu.active .options {
   display: block;
 }
@@ -242,8 +244,12 @@ section {
   color: #606266;
 }
 
-.form-group input {
+.form-group .form-input {
   width: 100%;
+  position: relative;
+}
+
+.form-group .form-input input {
   outline: none;
   border: 1px solid #d7d7d7;
   border-radius: 100px;
@@ -252,18 +258,58 @@ section {
   font-weight: 400;
   padding: 10px 16px;
   color: #333333;
+  width: 100%;
+}
+.input-message1 {
+  color: #f56c6c;
+  font-size: 12px;
+  line-height: 1;
+  display: none;
+
+}
+.input-message2 {
+  color: #f56c6c;
+  font-size: 12px;
+  line-height: 1;
+  display: none;
+
+}
+.input-focus {
+  display: none;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* .form-group .form-input input:focus ~ .input-message{
+  display: block;
+} */
+.form-group .form-input input:focus ~ .input-focus {
+  display: block;
 }
 .form-group input:focus,
 .form-group textarea:focus {
   border: 1px solid #409eff;
 }
 
-.form-group textarea {
+.form-group .form-message {
+  display: flex;
   width: 100%;
+  flex-direction: column;
+}
+.form-group .form-message textarea {
   height: 88px;
   border-radius: 100px;
   border: 1px solid #d7d7d7;
   padding: 10px 16px;
+  width: 100%;
+}
+.message-textarea {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
 }
 .icon-star {
   color: #d84f67;
@@ -381,49 +427,52 @@ section {
     border: 1px solid #59b8fe;
   }
   .card-label__from,
-  .card-label__to{
+  .card-label__to {
     font-size: 12px;
   }
-  .card-price{
+  .card-price {
     font-size: 25px;
   }
   .card-title__id,
   .card-title__name,
   .card-title__address,
-  .card-title__phone{
+  .card-title__phone {
     font-size: 10px !important;
     line-height: 18px !important;
     text-transform: none !important;
     font-weight: 400 !important;
   }
-  .card-title__qr img{
+  .card-title__qr img {
     width: 55px;
     height: 53.99px;
   }
 }
-@media (max-width:420px) {
-  section{
+@media (max-width: 420px) {
+  section {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .container-back{
+  .container-back {
     margin-left: 5px;
   }
 
-  .card-label__to{
-  top: 36px;
+  .card-label__to {
+    top: 36px;
   }
-  .form-group{
+  .form-group {
     display: flex;
     flex-direction: column;
     margin: 0;
-    margin-bottom: 32px;
   }
-  .form-group label{
+  .form-group label {
     width: 100%;
     margin-bottom: 0.5rem;
   }
-  .btn{
+  .btn {
     margin-top: 32px;
   }
+}
+.custom-size {
+  width: 707px;
+  height: 100%;
 }
