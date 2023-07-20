@@ -58,24 +58,20 @@ toInput.addEventListener("input", () => {
 const inputMessage1 = document.querySelector('.input-message1')
 const inputMessage2 = document.querySelector('.input-message2')
 
-fromInput.addEventListener('blur',()=>{
-  if(fromInput.value === ''){
-    inputMessage1.style.display = 'block';
+function handleBlur(event) {
+  const input = event.target;
+  const inputMessage = input === fromInput ? inputMessage1 : inputMessage2;
+
+  if (input.value === '') {
+    inputMessage.style.display = 'block';
+  } else {
+    inputMessage.style.display = 'none';
   }
-  else {
-    inputMessage1.style.display = 'none';
-  }
-})
+}
 
 
-toInput.addEventListener('blur',()=>{
-  if(toInput.value === ''){
-    inputMessage2.style.display = 'block';
-  }
-  else {
-    inputMessage2.style.display = 'none';
-  }
-})
+fromInput.addEventListener('blur', handleBlur);
+toInput.addEventListener('blur', handleBlur);
 
 
 //onclick image
